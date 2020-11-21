@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+$font: "Kumbh Sans", sans-serif;
+$f-size: 12px;
+$font-colour: hsl(238, 29%, 16%);
+$hover-colour: hsl(14, 88%, 65%);
+$white: white;
+$shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);
+$radius: 25px;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  background: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+  height: 100vh;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 1rem;
+}
+
+img {
+  display: block;
+}
+
+.container {
+  font-family: $font;
+  font-size: $f-size;
+  font-weight: 400;
+  margin: 1rem;
+  margin-top: 10rem;
+  padding: 2rem;
+  background-color: $white;
+  box-shadow: $shadow;
+  border-radius: $radius;
+  position: relative;
+
+  .banner {
+    &_container {
+      position: absolute;
+      top: 0;
+      left: 25%;
+    }
+    &_img {
+      position: absolute;
+    }
+    &_bg {
+      position: absolute;
+    }
+  }
+
+  .heading {
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 10rem;
+    margin-bottom: 2rem;
+  }
+  .question {
+    display: grid;
+    grid-template-columns: auto 50px;
+    align-items: center;
+    border-bottom: solid 1px hsl(240, 5%, 91%);
+    margin-top: 1rem;
+    p {
+      padding-bottom: 1rem;
+    }
+  }
+}
