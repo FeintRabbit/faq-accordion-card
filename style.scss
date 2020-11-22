@@ -30,6 +30,11 @@ button {
 
 img {
   display: block;
+  width: 100%;
+}
+
+.desktop-banner {
+  display: none;
 }
 
 .container {
@@ -47,15 +52,14 @@ img {
   .banner {
     &_container {
       position: absolute;
+      width: max-content;
       top: 0;
       left: 50%;
     }
     &_img {
-      position: absolute;
-      transform: translate(-55%, -55%);
+      transform: translate(-55%, -115%);
     }
     &_bg {
-      position: absolute;
       transform: translateX(-50%);
     }
   }
@@ -95,5 +99,44 @@ img {
   }
 }
 
-@media screen and (width: 769px) {
+@media screen and (min-width: 768px) {
+  .banner_container {
+    display: none;
+  }
+  .container {
+    max-width: 768px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "banner heading"
+      "banner questions";
+
+    .desktop-banner {
+      position: relative;
+      display: block;
+      grid-area: banner;
+      &_bg {
+        position: absolute;
+        transform: translate(-20%, 0);
+      }
+      &_img {
+        position: absolute;
+        transform: translate(-20%, 10%);
+      }
+      &_box {
+        position: absolute;
+        transform: translate(-50%, 0) scale(0.5);
+      }
+    }
+    .heading {
+      margin-top: 1rem;
+      grid-area: heading;
+      justify-self: start;
+    }
+    .questions {
+      grid-area: questions;
+      margin-bottom: 2rem;
+    }
+  }
 }

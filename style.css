@@ -21,6 +21,11 @@ button {
 
 img {
   display: block;
+  width: 100%;
+}
+
+.desktop-banner {
+  display: none;
 }
 
 .container {
@@ -37,15 +42,14 @@ img {
 }
 .container .banner_container {
   position: absolute;
+  width: max-content;
   top: 0;
   left: 50%;
 }
 .container .banner_img {
-  position: absolute;
-  transform: translate(-55%, -55%);
+  transform: translate(-55%, -115%);
 }
 .container .banner_bg {
-  position: absolute;
   transform: translateX(-50%);
 }
 .container .heading {
@@ -78,6 +82,46 @@ img {
 }
 .container .question button {
   align-self: start;
+}
+
+@media screen and (min-width: 768px) {
+  .banner_container {
+    display: none;
+  }
+
+  .container {
+    max-width: 768px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: "banner heading" "banner questions";
+  }
+  .container .desktop-banner {
+    position: relative;
+    display: block;
+    grid-area: banner;
+  }
+  .container .desktop-banner_bg {
+    position: absolute;
+    transform: translate(-20%, 0);
+  }
+  .container .desktop-banner_img {
+    position: absolute;
+    transform: translate(-20%, 10%);
+  }
+  .container .desktop-banner_box {
+    position: absolute;
+    transform: translate(-50%, 0) scale(0.5);
+  }
+  .container .heading {
+    margin-top: 1rem;
+    grid-area: heading;
+    justify-self: start;
+  }
+  .container .questions {
+    grid-area: questions;
+    margin-bottom: 2rem;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
