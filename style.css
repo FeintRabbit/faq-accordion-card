@@ -9,7 +9,7 @@ body {
   display: grid;
   place-items: center;
   background: linear-gradient(#af67e9, #6565e7);
-  height: 100vh;
+  min-height: 100vh;
 }
 
 button {
@@ -38,18 +38,20 @@ img {
 .container .banner_container {
   position: absolute;
   top: 0;
-  left: 25%;
+  left: 50%;
 }
 .container .banner_img {
   position: absolute;
+  transform: translate(-55%, -55%);
 }
 .container .banner_bg {
   position: absolute;
+  transform: translateX(-50%);
 }
 .container .heading {
   font-size: 2rem;
   text-align: center;
-  margin-top: 10rem;
+  margin-top: 7rem;
   margin-bottom: 2rem;
 }
 .container .question {
@@ -57,10 +59,25 @@ img {
   grid-template-columns: auto 50px;
   align-items: center;
   border-bottom: solid 1px #e7e7e9;
-  margin-top: 1rem;
+  padding-bottom: 0.5rem;
+  height: 39px;
+  overflow: hidden;
+}
+.container .question--selected {
+  height: auto;
+}
+.container .question--selected .question_q {
+  font-weight: bold;
+}
+.container .question_q:hover {
+  cursor: pointer;
+  color: #f47c57;
 }
 .container .question p {
-  padding-bottom: 1rem;
+  padding: 0.5rem 0;
+}
+.container .question button {
+  align-self: start;
 }
 
 /*# sourceMappingURL=style.css.map */

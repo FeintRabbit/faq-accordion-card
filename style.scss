@@ -18,7 +18,7 @@ body {
   display: grid;
   place-items: center;
   background: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
-  height: 100vh;
+  min-height: 100vh;
 }
 
 button {
@@ -48,20 +48,22 @@ img {
     &_container {
       position: absolute;
       top: 0;
-      left: 25%;
+      left: 50%;
     }
     &_img {
       position: absolute;
+      transform: translate(-55%, -55%);
     }
     &_bg {
       position: absolute;
+      transform: translateX(-50%);
     }
   }
 
   .heading {
     font-size: 2rem;
     text-align: center;
-    margin-top: 10rem;
+    margin-top: 7rem;
     margin-bottom: 2rem;
   }
   .question {
@@ -69,9 +71,29 @@ img {
     grid-template-columns: auto 50px;
     align-items: center;
     border-bottom: solid 1px hsl(240, 5%, 91%);
-    margin-top: 1rem;
+    padding-bottom: 0.5rem;
+    height: 39px;
+    overflow: hidden;
+
+    &--selected {
+      height: auto;
+      .question_q {
+        font-weight: bold;
+      }
+    }
+
+    &_q:hover {
+      cursor: pointer;
+      color: hsl(14, 88%, 65%);
+    }
     p {
-      padding-bottom: 1rem;
+      padding: 0.5rem 0;
+    }
+    button {
+      align-self: start;
     }
   }
+}
+
+@media screen and (width: 769px) {
 }
